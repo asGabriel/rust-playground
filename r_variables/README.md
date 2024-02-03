@@ -19,7 +19,7 @@
 
 ### 5. Constantes
 - Declare uma constante chamada PI e atribua a ela o valor 3.14159.
-- Declare uma constante chamada DAYS_IN_WEEK e atribua a ela o valor 7. Utilize-a para calcular o número total de dias em um mês e imprima o resultado.
+- Utilize a constante PI para calcular o perímetro da área de uma cincunferência, considere: A = pi * r.
 
 ### 6. Tipagem de Variáveis
 - Declare uma variável inteira num1 e uma variável de ponto flutuante num2. Em seguida, converta num1 em um ponto flutuante e some-o com num2.
