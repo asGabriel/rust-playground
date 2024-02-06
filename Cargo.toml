@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "r_actix",
+    "r_serde",
+    "r_std",
+    "r_variables"
+]
+
+resolver = "2"
