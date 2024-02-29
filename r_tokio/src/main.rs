@@ -3,7 +3,7 @@
 #[tokio::main(flavor = "multi_thread", worker_threads = 5)]
 async fn main() {
     // single thread test.
-    // test_something().await;
+    test_something().await;
 
     let racer01 = F1Racer::new();
     println!("{:#?}", &racer01);
