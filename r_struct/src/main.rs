@@ -6,7 +6,7 @@ fn main() {
 
 struct Person {
     name: String,
-    age: u32
+    age: u32,
 }
 
 trait ShowInformation {
@@ -16,9 +16,12 @@ trait ShowInformation {
 
 impl ShowInformation for Person {
     fn introduce_yourself(&self) {
-        println!("Hi, my name is {} and i'm {} years old", self.name, self.age);
+        println!(
+            "Hi, my name is {} and i'm {} years old",
+            self.name, self.age
+        );
     }
-    
+
     fn make_dinner(&self) {
         todo!()
     }
@@ -26,6 +29,9 @@ impl ShowInformation for Person {
 
 impl Person {
     fn new(name: String, age: u32) -> Self {
-        Self { name: name, age: age }
+        Self {
+            name: name,
+            age: age,
+        }
     }
 }

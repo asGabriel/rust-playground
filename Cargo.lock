@@ -796,6 +796,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "r_code_wars"
+version = "0.1.0"
+
+[[package]]
 name = "r_std"
 version = "0.1.0"
 

@@ -13,4 +13,3 @@ fn main() {
     // exercise05::constants();
     exercise06::variable_typing();
 }
-

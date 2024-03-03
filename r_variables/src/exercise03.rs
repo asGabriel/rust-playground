@@ -7,13 +7,13 @@ pub fn variable_scope() {
     // {
     //     let x = 10;
     // }
-    
+
     random_function();
-    
+
     // to compile
     let x = 1;
     let y = 2;
-    
+
     // Tente acessar as variáveis fora de seus respectivos escopos
     println!("Value of x: {}", x); // Esperado: Erro de compilação
     println!("Value of y: {}", y); // Esperado: Erro de compilação

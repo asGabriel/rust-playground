@@ -1,5 +1,5 @@
 // single thread
-// #[tokio::main(flavor = "current_thread")] 
+// #[tokio::main(flavor = "current_thread")]
 #[tokio::main(flavor = "multi_thread", worker_threads = 5)]
 async fn main() {
     // single thread test.
@@ -22,12 +22,18 @@ struct F1Racer {
     completed_laps: u8,
     laps: u8,
     best_lap_time: u8,
-    lap_times: Vec<u8>
+    lap_times: Vec<u8>,
 }
 
 impl F1Racer {
     fn new() -> F1Racer {
-        F1Racer { name: "Max Verstapen".to_string(), completed_laps: 0, laps: 5, best_lap_time: 255, lap_times: vec![87, 64, 126, 95, 76] }
+        F1Racer {
+            name: "Max Verstapen".to_string(),
+            completed_laps: 0,
+            laps: 5,
+            best_lap_time: 255,
+            lap_times: vec![87, 64, 126, 95, 76],
+        }
     }
 
     fn do_lap(&mut self) {
@@ -38,19 +44,21 @@ impl F1Racer {
             self.best_lap_time = lap_time.unwrap();
         }
 
-        self.completed_laps  += 1;
+        self.completed_laps += 1;
     }
 }
 
 impl std::future::Future for F1Racer {
     type Output = u8;
 
-    fn poll(self: std::pin::Pin<&mut Self>, cx: &mut std::task::Context<'_>) -> std::task::Poll<Self::Output> {
+    fn poll(
+        self: std::pin::Pin<&mut Self>,
+        cx: &mut std::task::Context<'_>,
+    ) -> std::task::Poll<Self::Output> {
         if self.completed_laps < self.laps {
             self.get_mut().do_lap();
             cx.waker().wake_by_ref();
-            return  std::task::Poll::Pending;
-
+            return std::task::Poll::Pending;
         }
         println!("{} has completed all laps", self.name);
         return std::task::Poll::Ready(self.best_lap_time);

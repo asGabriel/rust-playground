@@ -6,7 +6,8 @@ members = [
     "r_std",
     "r_variables",
     "r_tokio",
-    "r_struct"
+    "r_struct",
+    "r_code_wars"
 ]
 
 resolver = "2"
