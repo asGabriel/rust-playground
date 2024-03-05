@@ -18,12 +18,10 @@ Output: "even"
 */
 
 pub fn odd_or_even(numbers: Vec<i32>) -> String {
-  let sum = numbers.into_iter().fold(0, |acc, x| acc + x);
-  if sum % 2 == 0 {
-      return "even".to_string();
-  }
-  
-  return "odd".to_string();   
+    match numbers.iter().sum::<i32>() % 2 == 0 {
+        true => "even".to_string(),
+        false => "odd".to_string(),
+    }
 }
 
 #[cfg(test)]
