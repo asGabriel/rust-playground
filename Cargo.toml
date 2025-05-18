@@ -1,13 +1,6 @@
-[workspace]
+[package]
+name = "rust-playground"
+version = "0.1.0"
+edition = "2021"
 
-members = [
-    "r_actix",
-    "r_serde",
-    "r_std",
-    "r_variables",
-    "r_tokio",
-    "r_struct",
-    "r_code_wars"
-]
-
-resolver = "2"
+[dependencies]
